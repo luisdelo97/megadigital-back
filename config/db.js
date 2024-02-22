@@ -1,21 +1,27 @@
 import Sequelize from "sequelize";
+import "dotenv/config";
 
-const db = new Sequelize(process.env.DATABASE, "root", "111097", {
-  host: process.env.HOST_DB,
-  port: "3306",
-  dialect: "mysql",
-  define: {
-    timestamps: false,
-    freezeTableName: true,
-  },
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000,
-  },
-  operatorAliases: false,
-});
+const db = new Sequelize(
+  process.env.DATABASE,
+  process.env.USERNAME_DB,
+  process.env.PASSWORD_DB,
+  {
+    host: process.env.HOST_DB,
+    port: process.env.PORT_DB,
+    dialect: "mysql",
+    define: {
+      timestamps: false,
+      freezeTableName: true,
+    },
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+    operatorAliases: false,
+  }
+);
 
 const testConnection = async () => {
   try {
