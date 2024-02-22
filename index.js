@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./router.js";
+import router from "./router/router.js";
 import "dotenv/config";
 import cors from "cors";
 import { testConnection } from "./config/db.js";
