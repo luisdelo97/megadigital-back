@@ -1,20 +1,32 @@
 import express from "express";
-import router from "./router";
+import router from "./router.js";
+import "dotenv/config";
+import cors from "cors";
+import { testConnection } from "./config/db.js";
 
 const app = express();
 app.use(express.json());
+console.log({
+  database: process.env.DATABASE,
+  username: process.env.USERNAME_DB,
+  password: process.env.PASSWORD_DB,
+  host: process.env.HOST_DB,
+});
 
-// const dominiosPermitidos = [process.env.FRONTEND_URL];
+testConnection();
 
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (dominiosPermitidos.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-// };
+const dominiosPermitidos = ["http://localhost:5173"];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (dominiosPermitidos.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+app.use(cors(corsOptions));
 
 app.use("/", router);
 
