@@ -5,6 +5,7 @@ import obtenerReservas from "../controllers/obtenerReservas.js";
 import reservar from "../controllers/reservar.js";
 import actualizarReserva from "../controllers/actualizarReserva.js";
 import eliminarReserva from "../controllers/eliminarReserva.js";
+import obtenerPersona from "../controllers/obtenerPersona.js";
 
 const router = express.Router();
 
@@ -12,6 +13,7 @@ router.post("/", autenticar);
 
 router.post("/registrar", registrar);
 
+router.get("/home/persona", obtenerPersona);
 router.get("/home/reserva", obtenerReservas);
 router.post("/home/reserva", reservar);
 router.put("/home/reserva/:id", actualizarReserva);

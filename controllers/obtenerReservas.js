@@ -7,6 +7,12 @@ const obtenerReservas = async (req, res) => {
     const reservas = await Reserva.findAll({
       where: { personaid: Number(personaId) },
     });
+
+    if (reservas.length === 0) {
+      return res
+        .status(400)
+        .json({ msg: "No existen reservas para este usuario." });
+    }
     //vamos a agregarle a las reservas los datos de las habitaciones que le correspondan
     for (const reserva of reservas) {
       const habitacion = await Habitacion.findOne({
