@@ -6,12 +6,6 @@ import { testConnection } from "./config/db.js";
 
 const app = express();
 app.use(express.json());
-console.log({
-  database: process.env.DATABASE,
-  username: process.env.USERNAME_DB,
-  password: process.env.PASSWORD_DB,
-  host: process.env.HOST_DB,
-});
 
 testConnection();
 

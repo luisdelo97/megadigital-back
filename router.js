@@ -1,14 +1,10 @@
 import express from "express";
-import Persona from "./models/Persona.js";
-import { Op } from "sequelize";
-import {
-  actualizarReserva,
-  autenticar,
-  eliminarReserva,
-  obtenerReservas,
-  registrar,
-  reservar,
-} from "./controllers.js";
+import autenticar from "./controllers/autenticar.js";
+import registrar from "./controllers/registrar.js";
+import obtenerReservas from "./controllers/obtenerReservas.js";
+import reservar from "./controllers/reservar.js";
+import actualizarReserva from "./controllers/actualizarReserva.js";
+import eliminarReserva from "./controllers/eliminarReserva.js";
 
 const router = express.Router();
 
