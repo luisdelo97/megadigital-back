@@ -2,9 +2,12 @@ import Persona from "../models/Persona.js";
 
 const autenticar = async (req, res) => {
   const { nrodocumento } = req.body;
+
   try {
     // Comprobar si el usuario existe
-    const persona = await Persona.findOne({ where: { nrodocumento } });
+    const persona = await Persona.findOne({
+      where: { nrodocumento: Number(nrodocumento) },
+    });
 
     if (!persona) {
       const error = new Error("Persona no valida..");
