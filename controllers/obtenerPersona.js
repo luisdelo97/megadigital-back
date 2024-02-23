@@ -11,7 +11,7 @@ const obtenerPersona = async (req, res) => {
       return res.status(400).json({ msg: "No existe esta persona." });
     }
 
-    res.json(persona);
+    res.status(200).json(persona);
   } catch (error) {
     console.log(error);
     res.status(400).json({ msg: "Error al obtener persona." });

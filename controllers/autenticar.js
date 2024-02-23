@@ -15,7 +15,7 @@ const autenticar = async (req, res) => {
     }
 
     // Si el usuario existe y la validación es exitosa, redirigir a la ruta /home
-    res.json({
+    res.status(200).json({
       msg: "Autenticación exitosa",
       redirectUrl: "/home",
       personaId: persona.id,

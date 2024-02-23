@@ -24,7 +24,7 @@ const obtenerReservas = async (req, res) => {
       reserva.dataValues.tienetelevision = habitacion.tienetelevision;
       reserva.dataValues.tienefrigobar = habitacion.tienefrigobar;
     }
-    res.json(reservas);
+    res.status(200).json(reservas);
   } catch (error) {
     console.log(error);
     res.status(400).json({ msg: "Error al obtener reservas." });

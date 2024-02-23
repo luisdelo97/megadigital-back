@@ -63,7 +63,7 @@ const actualizarReserva = async (req, res) => {
     await habitacion.save();
     await reserva.save();
 
-    res.json({
+    res.status(200).json({
       msg: "Reserva actualizada exitosamente.",
       nuevaReserva: reserva,
       nuevaHabitacion: habitacion,
