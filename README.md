@@ -64,10 +64,13 @@ El servidor estará disponible en `http://localhost:<PORT>` donde `<PORT>` es el
 
 Descripción de algunos endpoints disponibles:
 
-- `GET /api/reservas` - Obtiene todas las reservas.
-- `POST /api/reservas` - Crea una nueva reserva.
-- `PUT /api/reservas/:id` - Actualiza una reserva existente.
-- `DELETE /api/reservas/:id` - Elimina una reserva.
+- `GET /` - Loggea una persona para ingresar.
+- `POST /registrar` - Registra una nueva la persona.
+- `GET /home/persona` - Obtiene la persona registrada.
+- `GET /home/reserva` - Obtiene todas las reservas.
+- `POST /home/reserva` - Crea una nueva reserva.
+- `PUT /home/reserva/:id` - Actualiza una reserva existente.
+- `DELETE /home/reserva/:id` - Elimina una reserva.
 
 Asegúrate de revisar el archivo de rutas para más detalles.
 
