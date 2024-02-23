@@ -9,7 +9,9 @@ app.use(express.json());
 
 testConnection();
 
-const dominiosPermitidos = [process.env.FRONTEND_URL];
+const dominiosPermitidos = [
+  "https://megadigital-az9jpszdu-luisdelo97.vercel.app/",
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
